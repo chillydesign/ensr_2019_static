@@ -1,0 +1,34 @@
+
+$yellow: #ffe000;
+$blue: #235ba8;
+$brown: #ac6f42;
+$green: #009e77;
+$pink: #df9cae;
+$red: #d2515e;
+
+$font_size: 1.75em;
+
+
+$font_stack:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+
+
+$black: #4e4a47;
+$font_color: $black;
+$dark_grey:  lighten($font_color, 15);
+$medium_grey:  lighten($font_color, 35);
+$light_grey:  lighten($font_color, 63);
+
+
+
+
+$mobile_width: 768px;
+$tablet_width: 992px;
+$browser_width: 1200px;
+
+
+@mixin linear-gradient($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}

@@ -1,0 +1,164 @@
+
+
+
+h1,h2,h3,h4,h5,h6 {
+    line-height: 110%;
+}
+
+h1 {
+    font-size: #{$font_size * 2.3};
+    padding: 0 0 30px;
+
+
+}
+h2 {
+    font-size: #{$font_size * 1.7};
+    padding: 0 0 20px;
+
+
+}
+
+h3 {
+    font-size: #{$font_size * 1.5};
+    padding: 0 0 10px;
+
+
+}
+
+
+h4 {
+    font-size: #{$font_size * 1.2};
+    padding: 0 0 10px;
+}
+
+
+.for_screen_readers {
+    visibility: hidden;
+    height: 0;
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+p {
+    padding: 0 0 30px;
+    font-size: $font_size;
+    line-height: 150%;
+}
+
+li {
+    font-size: $font_size;
+    padding: 0 0 5px;
+}
+
+
+strong, b {
+    font-weight: bold;
+}
+em, i {
+    font-size: italic;
+}
+
+a {
+
+    transition: all 0.3s;
+
+    &:link, &:visited, &:active, &:hover {
+        color: $red;
+        text-decoration: none;
+    }
+    &:hover {
+
+    }
+
+    &:focus {
+        box-shadow: 0 0 5px $red;
+    }
+
+    &.button {
+        display: inline-block;
+        padding: 10px 30px;
+        background: $yellow;
+        color: $font_color;
+        font-weight: bold;
+        font-size: $font_size;
+        &:hover {
+            transform: scale(1.1);
+
+        }
+        &.margin_top {
+            margin-top: 20px;
+        }
+        &.margin_bottom {
+            margin-bottom: 20px;
+        }
+    }
+
+
+}
+
+
+
+form {
+
+    input, textarea, select, button {
+        padding: 10px;
+        border: 0;
+        border-radius:  0;
+        font-family: $font_stack;
+        font-size: $font_size;
+        margin: 0 0 10px;
+        width: 100%;
+        box-shadow:  0 3px 0 0 transparent inset;
+        transition:  all 0.3s;
+        &:focus {
+
+        }
+    }
+
+
+    label {
+        display: block;
+        font-size: $font-size;
+        font-weight: bold;
+        padding: 0 0 5px;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+        width: auto;
+
+    }
+
+
+
+    input[type="submit"], button {
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: 1px;
+        background: $blue;
+        color: white;
+        &:hover {
+            background-color: darken($blue, 10);
+        }
+    }
+
+
+    .form_field {
+        margin: 0 0 25px;
+
+        &.field_error {
+            label {
+                color: $red;
+            }
+            input, select, textarea {
+                border: 1px solid $red;
+            }
+        }
+
+    }
+
+
+}

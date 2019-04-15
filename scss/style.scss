@@ -1,0 +1,24 @@
+
+
+@import 'fonts';
+@import 'variables';
+@import 'reset';
+@import 'typography';
+@import 'header';
+@import 'footer';
+@import 'slick';
+
+@media (min-width: $mobile_width) { }
+@media (min-width: $tablet_width) { }
+@media (min-width: $browser_width) { }
+
+body {
+    font: normal 62.5%  $font_stack;
+    background: white;
+    position: relative;
+    color: $font_color;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
