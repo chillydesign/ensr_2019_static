@@ -1,189 +1,81 @@
 
 
-$logo_height: 30px;
-$nav_width: 300px;
+$logo_height: 50px;
+
 
 @media (min-width: $mobile_width) {
 }
 
 
-
 header {
-    background: white;
-    padding: 20px 0;
-    border-bottom: 4px solid $yellow;
-    margin: 0;
-    position: relative;
-    z-index: 100;
 
+    #top_nav {
+        background: $blue;
+        margin: 0;
 
-    a#branding_mobile {
-        display: block;
-        width: 100%;
-        max-width: 250px;
-        background: url('../images/logo.svg') no-repeat center left;
-        background-size: contain;
-        height: $logo_height;
-        text-indent: -9999px;
-        @media (min-width: $mobile_width) {
-            display: none;
+        ul {
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline-block;
+                margin: 0;
+                padding: 0;
+                a {
+                    padding: 10px;
+                    margin: 0;
+                    color: white;
+                    display: inline-block;
+                    background: $light_blue;
+                }
+            }
         }
     }
 
 
-
     nav {
 
-        color: white;
-        position: fixed;
-        transition: all 0.3s;
-        z-index: 120;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: $nav_width;
-        overflow: scroll;
-        background: transparentize($font_color, 0.03);
-        margin: 0;
-        transform: translateX(#{$nav_width * -1 });
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 10px 0;
 
 
-
-        &.menu_visible {
-            transform: translateX(0);
-        }
-
-        // MENU FOR DESKTOP
-        @media (min-width: $mobile_width) {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            transform: translateX(0);
-            margin: 0;
-            position: static;
-            height: auto;
-            width: auto;
-            background: none;
-            overflow: visible;
-            text-align: center;
+        #branding {
+            background: url('../images/logo.svg') no-repeat center;
+            background-size: contain;
+            display: block;
+            text-indent: -9999px;
+            height: $logo_height;
+            width: 250px;
+            flex: 1 auto;
         }
 
         ul {
-
-            padding: 0;
-
-
-
-
-            // MENU FOR DESKTOP
-            @media (min-width: $mobile_width) {
-                flex: 1 auto;
-
-                &:first-child {
-                    text-align: left;
-                }
-
-                &:last-child {
-                    text-align: right;
-                }
-
-            }
-
-
-            &#branding {
-                display: none;
-                @media (min-width: $mobile_width) {
-                    display: block;
-                }
-                li {
-                    width: 200px;
-                }
-                a {
-                    display: inline-block;
-                    height: $logo_height;
-                    width: 100%;
-                    background: url('../images/logo.svg') no-repeat center left;
-                    background-size: contain;
-                    text-indent: -9999px;
-                    padding: 10px 0;
-
-                    &:hover {
-                        transform: scale(1.02);
-                    }
-                }
-            } // end of ul#branding
-
+            flex: 1 auto;
+            text-align: right;
 
             li {
-                display: block;
-                padding: 0 0 ;
-                margin: 0;
-                line-height: 1;
-                position: relative;
-                transition: all 0.3s;
-
-                @media (min-width: 768px) {
-                    display: inline-block;
-                }
-
+                display: inline-block;
 
                 a {
-                    display: block;
-                    color: $font_color;
-                    text-decoration: none;
-                    padding:  15px;
-                    margin:  0 0;
-                    position: relative;
+                    display: inline-block;
+                    color: $blue;
                     font-weight: bold;
-                    &:link, &:visited, &:active {
-                        color: white;
+                    text-transform: uppercase;
+                    padding: 0 10px;
+                    line-height: $logo_height;
+                    &:visited, &:active, &:link {
+                        color: $blue;
                     }
-
-                    &:hover {
-                        background: $dark_grey;
-                        color: white;
-                    }
-
-                    @media (min-width: 768px) {
-                        display: inline-block;
-                        padding: 10px;
-                        margin-top: 10px;
-
-
-                        &:link, &:visited, &:active {
-                            color: $font_color;
-                        }
-
-                        &:hover {
-                            color: white ;
-                        }
-
-
-                    } // end of non mobile styles
-                } // end of a
-
-
-
-
-                &:hover {
-
-
-                } // end of li:hover
-
-            } // end of li
-
-
-
-
-
-        } // end of ul
-
-
-
-    } // end of nav
-
+                }
+            }
+        }
+    }
 
 }
+
+
+
 
 #menu_button {
     display: inline-block;

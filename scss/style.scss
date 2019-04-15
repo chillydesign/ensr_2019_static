@@ -22,3 +22,282 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
 }
+
+
+$section_padding: 50px;
+
+section.section {
+    padding: $section_padding 0;
+}
+
+
+
+section.section_welcome {
+
+
+
+} // send section_school_sections
+
+
+section.section_school_sections {
+
+    h2 {
+        max-width: 400px;
+
+    }
+    ul.school_areas {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: $heading_font_stack;
+
+        li {
+            flex: 1 auto;
+            display: inline-block;
+            width: 50%;
+            max-width: 50%;
+            margin: 0;
+            padding: 0 0 50px;
+
+
+            a {
+                display: block;
+                font-style: italic;
+
+                strong {
+                    display: block;
+                    font-size: 1.6em;
+
+                }
+                span {
+                    color: $medium_grey;
+                    display: block;
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+} // end section_school_sections
+
+
+
+
+section.section_icons {
+    background: $blue ;
+    padding: 0;
+    color: white;
+    ul {
+
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        margin: 0;
+        li {
+            flex: 1 auto;
+            width: #{ (100% / 6)};
+            max-width: #{ (100% / 6)};
+            margin: 0;
+            padding: 0;
+            a {
+                text-indent: -9990px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 100%;
+                text-align: center;
+                color: white;
+                width: 100%;
+                padding: 95px 0;
+                display: block;
+
+            }
+
+            &.ramassage_scolaire {
+                a { background-image: url('../images/icon_bus.png') }
+            }
+            &.restauration_de_qualite {
+                a { background-image: url('../images/icon_restauration.png') }
+            }
+            &.etude_surveillee {
+                a { background-image: url('../images/icon_etude.png') }
+            }
+            &.internat {
+                a { background-image: url('../images/icon_internat.png') }
+            }
+            &.activites_et_camps {
+                a { background-image: url('../images/icon_activities.png') }
+            }
+            &.accent_surles_langues {
+                a { background-image: url('../images/icon_langues.png') }
+            }
+
+        }
+    }
+} // .section_icons
+
+
+section.section_slider_with_image, section.section_text_with_image {
+    padding-top:0;
+    padding-bottom: 0;
+
+    h2 {
+        padding-bottom: 50px;
+        position: relative;
+        &:after {
+            content: '';
+            height: 0;
+            width: 100px;
+            border-bottom: 3px solid $blue;
+            position: absolute;
+            left: 0;
+            bottom: 30px;
+        }
+    }
+
+    .section_text {
+        padding: $section_padding 0;
+    }
+}
+
+
+
+section.section_events {
+
+    background: $blue;
+
+    h2  {
+        color: white;
+        text-align: center;
+
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li.ensr_event {
+            flex: 1 auto;
+            max-width: 24%;
+            max-width: calc(25% - 20px);
+            margin: 0 10px 20px;
+            padding: 0;
+            font-size: 1em;
+            background: white no-repeat center center;
+            background-size: cover;
+            transition: all 0.3s;
+            &:hover {
+                transform: scale(1.03);
+            }
+
+
+
+            &.event_with_picture {
+                color: white;
+                a {
+                    color: white;
+                    background-color: transparentize(black, 0.72);
+                }
+                .date_container {
+                    color: white;
+                    &:after {
+                        border-color: white;
+                    }
+                }
+                .event_content {
+                    color: white;
+                }
+
+
+            }
+
+            a {
+
+                display: block;
+                padding: 20px;
+                min-height: 300px;
+            }
+
+
+            .date_container {
+                color: $blue;
+            }
+            .event_content {
+                color: $font_color;
+                text-align: center;
+                p {
+                    font-size: 1.3em;
+                }
+
+            }
+        }
+    }
+
+} // .section_events
+
+
+
+.date_container {
+    text-align: center;
+    padding: 0 0 50px;
+    position: relative;
+    font-size: 1.2em;
+    &:after {
+        content: '';
+        height: 0;
+        border-bottom: 3px solid $blue;
+        position: absolute;
+        left: 30%;
+        right: 30%;
+        bottom: 30px;
+
+    }
+    .day {
+        text-transform: lowercase;
+
+    }
+    .date {
+        font-size: 5em;
+        padding: 10px 0;
+    }
+    .month {
+        text-transform: lowercase;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+figure {
+    img {
+        width: 100%;
+        height: auto;
+    }
+    &.white_gradients {
+        position: relative;
+
+        &:after, &:before {
+            content:'';
+            width: 25%;
+            left:0;
+            height: 100%;
+            top:0;
+            background: linear-gradient(90deg, white, transparentize(white,1));
+            position: absolute;
+            z-index: 10;
+        }
+
+        &:before {
+            left: auto;
+            right: 0;
+            background: linear-gradient(270deg, white, transparentize(white,1));
+        }
+    }
+
+}

@@ -1,3 +1,17 @@
 footer {
-    
+    background: $dark_blue;
+    padding: 20px 0;
+    margin:  0;
+    color: white;
+    p {
+        padding: 0;
+
+    }
+    a {
+
+        color: white;
+        &:visited, &:active, &:link {
+            color: white;
+        }
+    }
 }

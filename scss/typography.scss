@@ -2,7 +2,8 @@
 
 
 h1,h2,h3,h4,h5,h6 {
-    line-height: 110%;
+    line-height: 120%;
+    font-family: $heading_font_stack;
 }
 
 h1 {
@@ -12,8 +13,11 @@ h1 {
 
 }
 h2 {
-    font-size: #{$font_size * 1.7};
+    font-size: #{$font_size * 1.9};
     padding: 0 0 20px;
+    font-style: italic;
+    color: $blue;
+    font-weight: bold;
 
 
 }
@@ -67,7 +71,7 @@ a {
     transition: all 0.3s;
 
     &:link, &:visited, &:active, &:hover {
-        color: $red;
+        color: $blue;
         text-decoration: none;
     }
     &:hover {
@@ -75,18 +79,25 @@ a {
     }
 
     &:focus {
-        box-shadow: 0 0 5px $red;
+        box-shadow: 0 0 5px $blue;
     }
 
     &.button {
         display: inline-block;
         padding: 10px 30px;
-        background: $yellow;
-        color: $font_color;
+        background: $blue;
+        color: white;
         font-weight: bold;
         font-size: $font_size;
+        text-transform: uppercase;
+
+        &:link, &:visited, &:active, &:hover {
+            color: white;
+
+        }
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
+            background-color: $dark_blue;
 
         }
         &.margin_top {
