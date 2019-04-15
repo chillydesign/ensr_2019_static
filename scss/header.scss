@@ -1,7 +1,7 @@
 
 
 $logo_height: 50px;
-
+$top_nav_height: 30px;
 
 @media (min-width: $mobile_width) {
 }
@@ -9,28 +9,7 @@ $logo_height: 50px;
 
 header {
 
-    #top_nav {
-        background: $blue;
-        margin: 0;
 
-        ul {
-            text-align: right;
-            margin: 0;
-            padding: 0;
-            li {
-                display: inline-block;
-                margin: 0;
-                padding: 0;
-                a {
-                    padding: 10px;
-                    margin: 0;
-                    color: white;
-                    display: inline-block;
-                    background: $light_blue;
-                }
-            }
-        }
-    }
 
 
     nav {
@@ -70,7 +49,77 @@ header {
                 }
             }
         }
-    }
+    } // nav
+
+
+    #top_nav {
+        background: $blue;
+        margin: 0;
+        padding: 0;
+        height: $top_nav_height;
+        overflow: hidden;
+
+        ul {
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline-block;
+                margin: 0 -2px 0 -2px;
+                padding: 0;
+                position: relative;
+
+
+                a {
+                    padding: 0 20px;
+                    line-height: $top_nav_height;
+                    margin: 0;
+                    color: white;
+                    display: inline-block;
+                    background: $light_blue;
+
+                }
+
+                &:first-child, &:last-child {
+
+                    &:after {
+                        // outline: 1px solid red;
+                        content:'';
+                        width: $top_nav_height;
+                        height: $top_nav_height;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        transform: rotate(45deg);
+                        z-index: 2;
+                    }
+                }
+
+                &:first-child {
+                    a {
+                        padding-left: $top_nav_height;
+                    }
+
+                    &:after {
+
+                        left: #{ ($top_nav_height   / -1.4) };
+                        background: $blue;
+                    }
+                }
+
+                &:last-child {
+                    a {
+                        padding-right: $top_nav_height;
+                    }
+                    &:after {
+
+                        right: #{ ($top_nav_height   / -1.4) };
+                        background-color: $light_blue;
+                    }
+                }
+            }
+        }
+    } // #top_nav
 
 }
 
