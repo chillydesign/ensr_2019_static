@@ -73,6 +73,11 @@ section.section_welcome {
         margin: 0 0 20px;
         padding: 0;
         text-align: center;
+        display: none;
+
+        @media (min-width: $mobile_width) {
+            display: block;
+        }
 
 
         li {
