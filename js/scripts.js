@@ -13,7 +13,7 @@
 
         // mobile menu button
         var $menu_button = $('#menu_button');
-        var $nav = $('nav');
+        var $nav = $('nav ul');
         $menu_button.on('click', function(e){
             e.preventDefault();
             $nav.toggleClass('menu_visible');

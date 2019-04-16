@@ -38,12 +38,19 @@ section.section_welcome {
     position: relative;
     min-height: 500px;
     color: white;
-
+    text-align: center;
+    @media (min-width: $mobile_width) {
+        text-align: left;
+    }
 
 
     h2 {
         color: white;
+
         text-shadow: 0 0 30px transparentize(black, 0.4);
+
+
+
     }
 
     .background_image {
@@ -60,7 +67,7 @@ section.section_welcome {
 
     ul.quick_links {
         position: absolute;
-        bottom: 20px;
+        bottom: 0px;
         left: 0;
         width: 100%;
         margin: 0 0 20px;
@@ -70,10 +77,17 @@ section.section_welcome {
 
         li {
             display: inline-block;
-            margin: 0 3px 0 ;
+            margin: 0 3px 6px ;
             padding: 0;
+            font-size: #{$font_size * 0.8};
+
+
+            @media (min-width: $mobile_width) {
+                font-size: $font_size;
+            }
 
             a {
+                font-weight: bold;
                 text-transform: uppercase;
                 display: inline-block;
                 padding: 15px 20px;
@@ -93,7 +107,14 @@ section.section_welcome {
 section.section_school_sections {
 
     h2 {
-        max-width: 400px;
+
+        text-align: center;
+
+        @media (min-width: $mobile_width) {
+            text-align: left;
+            max-width: 400px;
+
+        }
 
     }
     ul.school_areas {
@@ -110,21 +131,31 @@ section.section_school_sections {
             padding: 0 0 50px;
 
 
+
             $diamond_size: 60px;
             a {
                 display: block;
                 font-style: italic;
                 background-repeat: no-repeat;
-                background-position: center left;
+                background-position: top center;
                 background-size: $diamond_size;
-                padding-left: #{$diamond_size + 20px};
+                padding: #{$diamond_size + 20px}  0 0 0 ;
                 min-height: $diamond_size;
-                &:hover {
-                    transform: scale(1.06);
+                text-align: center;
+
+
+                @media (min-width: $mobile_width) {
+                    background-position: center left;
+                    padding: 0 0 0  #{$diamond_size + 20px};
+                    text-align: left;
+
                 }
 
 
 
+                &:hover {
+                    transform: scale(1.06);
+                }
                 strong {
                     display: block;
                     font-size: 1.6em;
@@ -163,17 +194,28 @@ section.section_icons {
     ul {
 
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+
+        @media (min-width: $mobile_width) {
+            flex-wrap: nowrap;
+        }
         align-items: center;
         justify-content: center;
         padding: 0 20px;
         margin: 0;
         li {
             flex: 1 auto;
-            width: #{ (100% / 6)};
-            max-width: #{ (100% / 6)};
+            width: #{ (100% / 2)};
+            max-width: #{ (100% / 2)};
             margin: 0;
             padding: 0;
+
+            @media (min-width: $mobile_width) {
+                width: #{ (100% / 6)};
+                max-width: #{ (100% / 6)};
+            }
+
+
             a {
                 text-indent: -9990px;
                 background-repeat: no-repeat;
@@ -182,7 +224,13 @@ section.section_icons {
                 text-align: center;
                 color: white;
                 width: 100%;
-                padding: 95px 0;
+                padding: 76px 0;
+
+                @media (min-width: $mobile_width) {
+                    padding: 95px 0;
+                }
+
+
                 display: block;
 
                 &:hover {
@@ -244,9 +292,34 @@ section.section_events {
 
     background: $blue;
 
-    h2  {
-        color: white;
-        text-align: center;
+
+
+    .title_and_buttons {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: 0 0 60px;
+        h2  {
+            flex: 1 auto;
+            color: white;
+            text-align: center;
+            width: 100%;
+            padding: 0;
+        }
+
+        a.button {
+            border: 2px solid white;
+            display: inline-block;
+            text-align: center;
+            font-size: 1.1em;
+            min-width: 180px;
+            padding: 10px 20px;
+
+            flex: 1 auto;
+            &:last-child {
+
+            }
+        }
 
     }
 
@@ -254,17 +327,25 @@ section.section_events {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin: 0 -10px;
 
         li.ensr_event {
             flex: 1 auto;
-            max-width: 24%;
-            max-width: calc(25% - 20px);
+            max-width: 48%;
+            max-width: calc(50% - 20px);
             margin: 0 10px 20px;
             padding: 0;
             font-size: 1em;
             background: white no-repeat center center;
             background-size: cover;
             transition: all 0.3s;
+
+            @media (min-width: $mobile_width) {
+                max-width: 24%;
+                max-width: calc(25% - 20px);
+
+            }
+
             &:hover {
                 transform: scale(1.03);
             }
@@ -293,8 +374,13 @@ section.section_events {
             a {
 
                 display: block;
-                padding: 20px;
+                padding: 10px;
                 min-height: 300px;
+
+                @media (min-width: $mobile_width) {
+                    padding: 20px;
+                }
+
             }
 
 

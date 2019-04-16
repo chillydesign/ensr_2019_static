@@ -10,42 +10,96 @@ $top_nav_height: 35px;
 header {
 
 
-
-
     nav {
-
+        padding: 10px 0;
         display: flex;
         flex-wrap: nowrap;
-        padding: 10px 0;
+        @media (min-width: $mobile_width) {
+
+        }
 
 
         #branding {
-            background: url('../images/logo.svg') no-repeat center;
+            background: url('../images/logo.svg') no-repeat left center;
             background-size: contain;
             display: block;
             text-indent: -9999px;
             height: $logo_height;
-            width: 250px;
+            width:  100%;
             flex: 1 auto;
+
+            @media (min-width: $mobile_width) {
+                width: 250px;
+
+            }
+
         }
 
         ul {
             flex: 1 auto;
-            text-align: right;
+
+            // display: none;
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 300px;
+            height: 100%;
+            bottom: 0;
+            background: $black;
+            margin: 0;
+            padding: 0;
+            z-index: 100;
+            transition: all 0.3s;
+            transform: translateX(-300px);
+
+            &.menu_visible {
+                transform: translateX(0px);
+            }
+
+
+            @media (min-width: $mobile_width) {
+                display: block;
+                text-align: right;
+                position: static;
+                width: auto;
+                background: none;
+                height: auto;
+                transform: translateX(0);
+            }
+
+
 
             li {
-                display: inline-block;
+
+                display: block;
+
+                @media (min-width: $mobile_width) {
+                    display: inline-block;
+                }
 
                 a {
-                    display: inline-block;
-                    color: $blue;
+                    display: block;
+                    color: white;
                     font-weight: bold;
                     text-transform: uppercase;
                     padding: 0 10px;
                     line-height: $logo_height;
-                    &:visited, &:active, &:link {
-                        color: $blue;
+
+                    &:visited, &:active, &:link, &:hover {
+                        color: white;
                     }
+
+
+                    @media (min-width: $mobile_width) {
+                        display: inline-block;
+                            color: $blue;
+
+                            &:visited, &:active, &:link {
+                                color: $blue;
+                            }
+                    }
+
+
                 }
             }
         }
@@ -97,7 +151,7 @@ header {
                 }
 
                 &:first-child {
-                
+
                     a {
                         padding-left: $top_nav_height;
                     }
@@ -134,7 +188,7 @@ header {
     width: 42px;
     position: absolute;
     z-index: 1000;
-    top: 16px;
+    top: #{ $top_nav_height + 15px};
     right: 11px;
     background: url('../images/menu.svg') no-repeat center;
     background-size: 30px;
@@ -142,7 +196,8 @@ header {
     cursor: pointer;
 
 
-    @media (min-width: 768px) {
+
+    @media (min-width: $mobile_width) {
         display: none;
     }
 
