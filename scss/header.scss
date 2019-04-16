@@ -8,15 +8,23 @@ $top_nav_height: 35px;
 
 
 header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: white;
+    left: 0;
+    z-index: 100;
+
+    @media (min-width: $mobile_width) {
+    //    position: static;
+    }
 
 
     nav {
         padding: 10px 0;
         display: flex;
         flex-wrap: nowrap;
-        @media (min-width: $mobile_width) {
 
-        }
 
 
         #branding {
@@ -37,13 +45,12 @@ header {
 
         ul {
             flex: 1 auto;
-
-            // display: none;
             position: absolute;
             top:0;
             left: 0;
             width: 300px;
             height: 100%;
+            height: 100vh;
             bottom: 0;
             background: $black;
             margin: 0;
@@ -72,9 +79,14 @@ header {
             li {
 
                 display: block;
+                padding: 0;
+                margin: 0;
+                background: $black;
+                font-size: #{$font_size * 0.9};
 
                 @media (min-width: $mobile_width) {
                     display: inline-block;
+                    background: none;
                 }
 
                 a {
@@ -84,19 +96,32 @@ header {
                     text-transform: uppercase;
                     padding: 0 10px;
                     line-height: $logo_height;
+                    border-top: 1px solid lighten($black, 5);
+                    border-bottom:  1px solid darken($black, 10);
 
                     &:visited, &:active, &:link, &:hover {
                         color: white;
                     }
 
+                    &:hover {
+                        background: $blue;
+                    }
+
 
                     @media (min-width: $mobile_width) {
                         display: inline-block;
-                            color: $blue;
+                        color: $blue;
+                        border-top: 0;
+                        border-bottom: 2px solid transparent;
 
-                            &:visited, &:active, &:link {
-                                color: $blue;
-                            }
+                        &:visited, &:active, &:link {
+                            color: $blue;
+                        }
+
+                        &:hover {
+                            background: none;
+                            border-color: $blue;
+                        }
                     }
 
 
@@ -106,80 +131,80 @@ header {
     } // nav
 
 
-    #top_nav {
-        background: $blue;
-        margin: 0;
-        padding: 0;
-        height: $top_nav_height;
-        overflow: hidden;
-
-        ul {
-            text-align: right;
-            margin: 0;
-            padding: 0;
-            li {
-                display: inline-block;
-                margin: 0 -2px 0 -2px;
-                padding: 0;
-                position: relative;
-
-
-                a {
-                    padding: 0 20px;
-                    line-height: $top_nav_height;
-                    margin: 0;
-                    color: white;
-                    display: inline-block;
-                    background: $light_blue;
-
-
-                }
-
-                &:first-child, &:last-child {
-
-                    &:after {
-                        // outline: 1px solid red;
-                        content:'';
-                        width: $top_nav_height;
-                        height: $top_nav_height;
-                        display: block;
-                        position: absolute;
-                        top: 0;
-                        transform: rotate(45deg);
-                        z-index: 2;
-                    }
-                }
-
-                &:first-child {
-
-                    a {
-                        padding-left: $top_nav_height;
-                    }
-
-                    &:after {
-
-                        left: #{ ($top_nav_height   / -1.4) };
-                        background: $blue;
-                    }
-                }
-
-                &:last-child {
-                    a {
-                        padding-right: $top_nav_height;
-                    }
-                    &:after {
-
-                        right: #{ ($top_nav_height   / -1.4) };
-                        background-color: $light_blue;
-                    }
-                }
-            }
-        }
-    } // #top_nav
-
 }
 
 
+
+#top_nav {
+    background: $blue;
+    margin: 0;
+    padding: 0;
+    height: $top_nav_height;
+    overflow: hidden;
+
+    ul {
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            margin: 0 -2px 0 -2px;
+            padding: 0;
+            position: relative;
+
+
+            a {
+                padding: 0 20px;
+                line-height: $top_nav_height;
+                margin: 0;
+                color: white;
+                display: inline-block;
+                background: $light_blue;
+
+
+            }
+
+            &:first-child, &:last-child {
+
+                &:after {
+                    // outline: 1px solid red;
+                    content:'';
+                    width: $top_nav_height;
+                    height: $top_nav_height;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    transform: rotate(45deg);
+                    z-index: 2;
+                }
+            }
+
+            &:first-child {
+
+                a {
+                    padding-left: $top_nav_height;
+                }
+
+                &:after {
+
+                    left: #{ ($top_nav_height   / -1.4) };
+                    background: $blue;
+                }
+            }
+
+            &:last-child {
+                a {
+                    padding-right: $top_nav_height;
+                }
+                &:after {
+
+                    right: #{ ($top_nav_height   / -1.4) };
+                    background-color: $light_blue;
+                }
+            }
+        }
+    }
+} // #top_nav
 
 
 #menu_button {
@@ -188,7 +213,7 @@ header {
     width: 42px;
     position: absolute;
     z-index: 1000;
-    top: #{ $top_nav_height + 15px};
+    top:  19px;
     right: 11px;
     background: url('../images/menu.svg') no-repeat center;
     background-size: 30px;
