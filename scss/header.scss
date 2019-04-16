@@ -1,7 +1,7 @@
 
 
 $logo_height: 50px;
-$top_nav_height: 30px;
+$top_nav_height: 35px;
 
 @media (min-width: $mobile_width) {
 }
@@ -78,6 +78,7 @@ header {
                     display: inline-block;
                     background: $light_blue;
 
+
                 }
 
                 &:first-child, &:last-child {
@@ -96,6 +97,7 @@ header {
                 }
 
                 &:first-child {
+                
                     a {
                         padding-left: $top_nav_height;
                     }

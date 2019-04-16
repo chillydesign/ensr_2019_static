@@ -1,5 +1,7 @@
 
 
+
+
 @import 'fonts';
 @import 'variables';
 @import 'reset';
@@ -33,10 +35,59 @@ section.section {
 
 
 section.section_welcome {
+    position: relative;
+    min-height: 500px;
+    color: white;
 
+
+
+    h2 {
+        color: white;
+        text-shadow: 0 0 30px transparentize(black, 0.4);
+    }
+
+    .background_image {
+        height: 100%;
+        width: 100%;
+        top:0;
+        left: 0;
+        z-index: -1;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    ul.quick_links {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        margin: 0 0 20px;
+        padding: 0;
+        text-align: center;
+
+
+        li {
+            display: inline-block;
+            margin: 0 3px 0 ;
+            padding: 0;
+
+            a {
+                text-transform: uppercase;
+                display: inline-block;
+                padding: 15px 20px;
+                background: $blue;
+                color: white;
+            }
+        }
+    }
 
 
 } // send section_school_sections
+
+
+
 
 
 section.section_school_sections {
@@ -59,9 +110,20 @@ section.section_school_sections {
             padding: 0 0 50px;
 
 
+            $diamond_size: 60px;
             a {
                 display: block;
                 font-style: italic;
+                background-repeat: no-repeat;
+                background-position: center left;
+                background-size: $diamond_size;
+                padding-left: #{$diamond_size + 20px};
+                min-height: $diamond_size;
+                &:hover {
+                    transform: scale(1.06);
+                }
+
+
 
                 strong {
                     display: block;
@@ -73,6 +135,19 @@ section.section_school_sections {
                     display: block;
                     font-size: 1.2em;
                 }
+            }
+
+            &.school_maternelle a {
+                background-image: url('../images/diamond_1.svg');
+            }
+            &.school_primaire a {
+                background-image: url('../images/diamond_2.svg');
+            }
+            &.school_college a {
+                background-image: url('../images/diamond_3.svg');
+            }
+            &.school_gymnase a {
+                background-image: url('../images/diamond_4.svg');
             }
         }
     }
@@ -109,6 +184,10 @@ section.section_icons {
                 width: 100%;
                 padding: 95px 0;
                 display: block;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
 
             }
 
