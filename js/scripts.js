@@ -7,6 +7,7 @@
 
         var $window = $(window);
         var $body = $('body');
+        var $header = $('header');
 
 
 
@@ -29,6 +30,38 @@
         $('#main').on('click', function() {
             $nav.removeClass('menu_visible');
         });
+
+
+        ////////////////////////////
+        // animate sliding down page
+    	$('.scroll_link').on('click', function(e){
+    		e.preventDefault();
+
+    		var $this = $(this);
+    		var $href = $this.attr('href');
+    		var $hash = $href.split('#')[1];
+
+    		if (typeof $hash !== 'undefined') {
+    			var $location = $('#' + $hash);
+    			if($location.length  > 0) {
+                    var $scrollPosition = $location.offset().top;
+                    if ($header.length > 0) {
+                        $scrollPosition -= $header.height();
+                    }
+    				$("html, body").animate({ scrollTop: $scrollPosition }, 1000);
+    			} else {
+    				window.location.href = $href;
+    			}
+    		} else {
+    			window.location.href = $href;
+    		}
+    	});
+        ////////////////////////////
+        // animate sliding down page
+
+
+
+
 
 
 
