@@ -69,7 +69,7 @@
         // SLIDER
 
         $('.slick_slider').slick({
-            dots: false,
+            dots: true,
             arrows: false,
             fade: true,
             autoplay: true,

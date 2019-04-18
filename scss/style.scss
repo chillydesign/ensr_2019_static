@@ -283,6 +283,13 @@ section.section_slider_with_image, section.section_text_with_image {
     .section_text {
         padding: $section_padding 0;
     }
+
+    ul.slick-dots {
+        width: 50%;
+        left: 50%;
+        right: 0;
+
+    }
 }
 
 
