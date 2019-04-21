@@ -7,7 +7,7 @@ footer {
     color: white;
 
     .footer_background {
-        background: url('../images/diamonds_2.png') no-repeat 100% 56px;
+        background: url('../images/diamonds_2.png') no-repeat right bottom;
         background-size: 200px;
         height: 100%;
         width: 100%;
@@ -15,6 +15,11 @@ footer {
         left: 0;
         z-index: 1;
         position: absolute;
+
+        @media (min-width: $mobile_width) {
+            background-position: 100% 56px
+        }
+
     }
 
     .container {
