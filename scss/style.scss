@@ -36,7 +36,7 @@ section.section {
 
 section.section_welcome {
     position: relative;
-    min-height: 500px;
+    
     color: white;
     text-align: center;
     @media (min-width: $mobile_width) {
@@ -44,13 +44,13 @@ section.section_welcome {
     }
 
 
+    .welcome_text_inner {
+        padding: 80px 0  130px;
+    }
+
     h2 {
         color: white;
-
         text-shadow: 0 0 30px transparentize(black, 0.4);
-
-
-
     }
 
     .background_image {
